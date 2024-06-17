@@ -20,11 +20,11 @@ public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public List<Cliente> getClientes() throws NotFoundException {
+    public List<Cliente> getClientes() {
         var clientes = clienteRepository.findAll();
 
         if (clientes.isEmpty()) {
-            throw new NotFoundException("Nenhum cliente encontrado!", null);
+            throw new NotFoundException("Nenhum cliente encontrado!");
         }
 
         return clientes;
