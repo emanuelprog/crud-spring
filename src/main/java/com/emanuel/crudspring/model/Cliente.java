@@ -7,10 +7,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Data;
+import lombok.*;
 
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Cliente {
     
     @Id
@@ -23,4 +25,9 @@ public class Cliente {
 
     @Column(length = 2, nullable = false)
     private Integer age;
+
+    public Cliente(Cliente data) {
+        this.name = data.name;
+        this.age = data.age;
+    }
 }

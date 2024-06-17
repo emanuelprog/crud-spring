@@ -1,4 +1,4 @@
-package utils;
+package com.emanuel.crudspring.utils;
 
 import com.emanuel.crudspring.model.DefaultResponse;
 import org.springframework.http.HttpStatus;

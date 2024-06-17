@@ -1,8 +1,5 @@
 package com.emanuel.crudspring.controller;
 
-import java.util.List;
-import java.util.Optional;
-
 import com.emanuel.crudspring.model.DefaultResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +16,7 @@ import com.emanuel.crudspring.model.Cliente;
 import com.emanuel.crudspring.service.ClienteService;
 
 import lombok.AllArgsConstructor;
-import utils.ResponseUtil;
+import com.emanuel.crudspring.utils.ResponseUtil;
 
 @RestController
 @RequestMapping("/clientes")
