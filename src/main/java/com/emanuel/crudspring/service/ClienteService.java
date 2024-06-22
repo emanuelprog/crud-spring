@@ -5,19 +5,17 @@ import java.util.Optional;
 
 import com.emanuel.crudspring.exception.BadRequestException;
 import com.emanuel.crudspring.exception.NotFoundException;
-import com.emanuel.crudspring.model.DefaultResponse;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-
-import com.emanuel.crudspring.exception.InvalidRequestException;
 import com.emanuel.crudspring.model.Cliente;
 import com.emanuel.crudspring.repository.ClienteRepository;
 
 @Service
+@AllArgsConstructor
 public class ClienteService {
 
-    @Autowired
     private ClienteRepository clienteRepository;
 
     public List<Cliente> getClientes() {
