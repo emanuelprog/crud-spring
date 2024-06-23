@@ -1,6 +1,5 @@
 package com.emanuel.crudspring.exception;
 
-import com.emanuel.crudspring.model.DefaultResponse;
 import com.emanuel.crudspring.model.ExceptionResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

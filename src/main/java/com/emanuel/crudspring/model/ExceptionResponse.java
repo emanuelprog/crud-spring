@@ -1,11 +1,15 @@
 package com.emanuel.crudspring.model;
 
-public class ExceptionResponse {
-    private String message;
-    private int status;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-    public ExceptionResponse(String message, int status) {
-        this.message = message;
-        this.status = status;
-    }
+@Getter
+@Setter
+@AllArgsConstructor
+public class ExceptionResponse {
+
+    private String message;
+
+    private int status;
 }

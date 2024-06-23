@@ -1,6 +1,7 @@
 package com.emanuel.crudspring.controller;
 
 import com.emanuel.crudspring.model.DefaultResponse;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,10 +21,10 @@ import com.emanuel.crudspring.utils.ResponseUtil;
 
 @RestController
 @RequestMapping("/clientes")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ClienteController {
 
-    private ClienteService clienteService;
+    private final ClienteService clienteService;
 
     @GetMapping
     public ResponseEntity<DefaultResponse> buscarTodos() {

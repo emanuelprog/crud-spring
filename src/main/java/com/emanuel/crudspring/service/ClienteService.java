@@ -1,22 +1,20 @@
 package com.emanuel.crudspring.service;
 
+import com.emanuel.crudspring.exception.BadRequestException;
+import com.emanuel.crudspring.exception.NotFoundException;
+import com.emanuel.crudspring.model.Cliente;
+import com.emanuel.crudspring.repository.ClienteRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
-import com.emanuel.crudspring.exception.BadRequestException;
-import com.emanuel.crudspring.exception.NotFoundException;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Service;
-import com.emanuel.crudspring.model.Cliente;
-import com.emanuel.crudspring.repository.ClienteRepository;
-
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ClienteService {
 
-    private ClienteRepository clienteRepository;
+    private final ClienteRepository clienteRepository;
 
     public List<Cliente> getClientes() {
         var clientes = clienteRepository.findAll();
@@ -41,7 +39,8 @@ public class ClienteService {
 
         if (clienteDB.isPresent()) {
             cliente.setId(id);
-           return clienteRepository.save(cliente);
+
+            return clienteRepository.save(cliente);
         } else {
             throw new BadRequestException("Não foi possível atualizar o cliente");
         }
@@ -56,5 +55,5 @@ public class ClienteService {
             throw new BadRequestException("Não foi possível deletar o cliente");
         }
     }
-    
+
 }
